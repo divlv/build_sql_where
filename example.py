@@ -1,5 +1,5 @@
 import re
-import parser
+from inputstringparser import Parser
 import datetime
 
 def create_setup():
@@ -124,10 +124,10 @@ list_in = (
     }
     ])
 
-print(parser.Parser(create_setup()).filter('',list_in))
+print(Parser(create_setup()).filter('',list_in))
 
-print(parser.Parser(create_setup()).filter('jog_id gt 1',list_in))
+print(Parser(create_setup()).filter('jog_id gt 1',list_in))
 
-print(parser.Parser(create_setup()).filter('date gt \'2019-01-04\'',list_in))
+print(Parser(create_setup()).filter('date gt \'2019-01-04\'',list_in))
 
-print(parser.Parser(create_setup()).filter('(jog_id eq 1) OR (date gt \'2019-01-04\')',list_in))
+print(Parser(create_setup()).filter('(jog_id eq 1) OR (date gt \'2019-01-04\')',list_in))
